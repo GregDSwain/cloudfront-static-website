@@ -27,7 +27,7 @@ https://developer.hashicorp.com/terraform/install
     ```  
     You will be prompted to enter a value for the variable `content_root_domain_name`.  
 > [!IMPORTANT]
-> The value for `content_root_domain_name` ***MUST*** be a root domain name (e.g. `example.com`).  Your content will be served on its www subdomain (e.g. `www.example.com`).  This behavior may be changed, see Options below.
+> The value for `content_root_domain_name` ***MUST*** be a root domain name (e.g. `example.com`).  Your content will be served on its www subdomain (e.g. `www.example.com`).  This behavior may be changed, see [Going Further](#going-further) below.
 
 5. Check the web for example content  
     The `./html/index.html` file from this repo should be served on www subdomain of the root domain you provided.
@@ -47,10 +47,11 @@ terraform destroy
 ```
 You will be prompted to enter a value for the variable `content_root_domain_name` again.
 > [!IMPORTANT]
-> The value you give for `content_root_domain_name` should be ***exactly*** the same value you gave when you ran the `terraform apply` command earlier.
+> The value you give for `content_root_domain_name` should be ***EXACTLY*** the same value you gave when you ran the `terraform apply` command earlier.
 ## Going Further
 > [!CAUTION]
 > It is possible that changing these variables could cause a S3 Bucket to be recreated.  This would destroy any files you have stored there.  Make sure your content is safely stored elsewhere before making changes.
+
 Give values to following variables to change behavior:
 - `serve_content_on_www_subdomain` - Set to `false` to serve your content from the root domain (e.g. `example.com`) instead of its www subdomain (e.g. `www.example.com`).  The redirect for the subdomain wildcard will still send traffic to the www subdomain to your content.
 - `redirect_root_domain_names` - Provide a list of root domains to have their traffic and and their subdomains' traffic redirected to your content.
