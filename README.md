@@ -39,7 +39,7 @@ Update the website by changing the files in the S3 Bucket indicated by the `cont
 terraform output
 ```
 > [!WARNING]
-> Changes made to files in the S3 Bucket will not be apparent until the cache in CloudFront cache expires.  You will want to invalidate the cache manually instead of waiting.  Refer to AWS documentation to perform this operation.
+> Changes made to files in the S3 Bucket will not be apparent until the CloudFront cache expires.  You will want to invalidate the cache manually instead of waiting.  Refer to AWS documentation to perform this operation.
 ## Cleaning Up
 You may destroy the infrastructure you deployed with this command
 ```
